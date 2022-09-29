@@ -14,6 +14,8 @@
 
 <body>
   <div class="container">
+    <a href="#nav" class="skip-link">Skip To Main Navigation</a>
+    <a href="#main" class="skip-link">Skip To Main Content</a>
     <div class="site-header">
       <h1>Jam Box Studios</h1>
       <div class="main-nav">
@@ -24,7 +26,7 @@
           <li><a href="#">Studio</a></li>
         </ul>
       </div>
-      <img src="https://placekitten.com/1200/900" class="banner">
+      <img src="https://placekitten.com/1200/900" alt="Kitten" class="banner">
     </div>
     <div class="main-content">
       <h1>Welcome to Jam Box</h1>
@@ -32,29 +34,31 @@
       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam perferendis expedita sed itaque odit ipsam omnis, eos voluptates magni fugit culpa voluptatibus, inventore eaque, eligendi voluptatum! Voluptate iusto error voluptatibus.</p>
       <div class="owner">
         <h1>Meet the owner</h1>
-        <ul>
-          <li>Name: John Doe</li>
-          <li>Title: CEO</li>
-          <li>Email: johnjoe@jambox.ca</li>
-          <li>Phone: 613-000-0000</li>
-        </ul>
-        <h1>Address</h1>
-        <p>
-          Jambox Studios
-          123 Guitar Road,
-          Musicville, Danceistan
-          B3T 0L0
-        </p>
+        <ul itemscope itemtype="https://schema.org/Person">
+          <li itemprop="name">Name: John Doe</li>
+          <li itemprop="jobTitle">Title: CEO</li>
+          <li itemprop="email">Email: johnjoe@jambox.ca</li>
+          <li itemprop="telephone">Phone: 613-000-0000
+             <h3>Address</h3>
+             <li itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+              <span itemprop="name">Jambox Studios</span> 
+              <span itemprop="streetAddress">123 Guitar Road,</span>
+              <span itemprop="addressCountry">Musicville, Danceistan</span>
+              <span itemprop="postalCode">B3T 0L0</span>
+            </li>
+         </ul>
       </div>
       <div class="contact-section">
         <h1>Contact Us</h1>
-        <form action="thanks.html">
-          <label>Full Name</label>
-          <input type="text" placeholder="Full Name">
-          <input type="text" placeholder="Email">
-          <input type="text" placeholder="Subject">
-          <b>Your Message</b>
-          <textarea></textarea>
+        <form action="thanks.html" role="form">
+          <label for="fullname">Full Name</label>
+          <input id="fullname" type="text" placeholder="Full Name" aria-label="Write full name">
+          <label for="email">Email</label>
+          <input id="email" type="text" placeholder="Email" aria-label="Write email">
+          <label for="subject">Subject</label>
+          <input id="subject" type="text" placeholder="Subject" aria-label="write subject">
+          <label for="message">Your Message</label>
+          <textarea id="message" aria-label="Write message"></textarea>
           <button type="submit">Send</button>
         </form>
       </div>
